@@ -13,10 +13,15 @@ export async function POST(req: Request) {
     }
 
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
+      },
+      tls: {
+        rejectUnauthorized: false, // 👈 ADD THIS LINE
       },
     });
 
@@ -34,10 +39,11 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ success: true });
-  } catch (error) {
-    return NextResponse.json(
-      { error: "Something went wrong" },
-      { status: 500 }
-    );
-  }
+  } catch (error: any) {
+  console.error("EMAIL ERROR:", error); // 👈 VERY IMPORTANT
+  return NextResponse.json(
+    { error: error.message || "Something went wrong" },
+    { status: 500 }
+  );
+}
 }

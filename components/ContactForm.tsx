@@ -11,7 +11,8 @@ export default function ContactForm() {
   });
 
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState("");
+  const [status, setStatus] = useState<"success" | "error" | "">("");
+  const [message, setMessage] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -22,22 +23,32 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setSuccess("");
+    setStatus("");
+    setMessage("");
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
-    const data = await res.json();
-    setLoading(false);
+      const data = await res.json();
+      setLoading(false);
 
-    if (res.ok) {
-      setSuccess("Message sent successfully!");
-      setForm({ name: "", email: "", phone: "", message: "" });
-    } else {
-      setSuccess("Something went wrong.");
+      if (res.ok) {
+        setStatus("success");
+        setMessage("Message sent successfully!");
+        setForm({ name: "", email: "", phone: "", message: "" });
+      } else {
+        setStatus("error");
+        setMessage(data.error || "Something went wrong.");
+      }
+    } catch (error) {
+      console.error("FRONTEND ERROR:", error);
+      setStatus("error");
+      setMessage("Network error. Please try again.");
+      setLoading(false);
     }
   };
 
@@ -84,12 +95,20 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="bg-black text-white px-6 py-3 rounded"
+        className="bg-black text-white px-6 py-3 rounded-full cursor-pointer disabled:opacity-50"
       >
         {loading ? "Sending..." : "Send Message"}
       </button>
 
-      {success && <p className="text-sm mt-2">{success}</p>}
+      {message && (
+        <p
+          className={`text-sm mt-2 ${
+            status === "success" ? "text-green-600" : "text-red-600"
+          }`}
+        >
+          {message}
+        </p>
+      )}
     </form>
   );
 }
