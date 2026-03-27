@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import RippleButton from "@/components/RippleButton";
 
 export default function Header(){
     const [isOpen, setIsOpen] = useState(false);
@@ -16,15 +17,15 @@ export default function Header(){
 
                     {/* Navigation */}
                     <nav className="hidden md:flex items-center gap-8 text-sm">
-                        <Link href="/" className="hover:text-gray-500 transition">
+                        <Link href="/" className="text-gray-500 transition">
                             Home
                         </Link>
                         <Link href="#service"  className="text-gray-500 transition">Services</Link>
                         <Link href="#work" className="text-gray-500 transition">
                             Work
                         </Link>
-                        <Link href="#contact" className="bg-black text-white px-6 py-2 rounded-full text-sm hover:opacity-80 transition">
-                            Book a Free Call
+                        <Link href="#contact" className="">
+                            <RippleButton title="Book a Free Call" variant="solid" to="#contact" />
                         </Link>
                     </nav>
                     <svg onClick={() => setIsOpen(true)} xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 32 32" fill="none" className="navbar_open-button"><path d="M5.33325 6.66667H26.6666M5.33325 16H26.6666M5.33325 25.3333H26.6666" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
@@ -44,8 +45,8 @@ export default function Header(){
                         <Link href="#work" className="navbar_link-text" onClick={()=> setIsOpen(false)}>
                             Work
                         </Link>
-                        <Link href="#contact" className="bg-black text-white px-6 py-2 rounded-full text-sm hover:opacity-80 transition"onClick={()=> setIsOpen(false)}>
-                            Book a Free Call
+                        <Link href="#contact" className="customBtn"onClick={()=> setIsOpen(false)}>
+                            <RippleButton title="Book a Free Call" variant="solid" to="#contact" />
                         </Link>
                 </nav>
             </div>
