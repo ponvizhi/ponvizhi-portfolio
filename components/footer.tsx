@@ -37,7 +37,7 @@ export default function Footer(){
                      </div>
                   </div>
                   <div className="footer_bottom">
-                     <div className="text-size-small is-caption">©2026 ponvizhi.dev | All rights reserved.</div>
+                     <div className="text-size-small is-caption">©2026 ponvizhiweb.com | All rights reserved.</div>
                   </div>
                </div>
             </div>
