@@ -12,7 +12,7 @@ export default function Header(){
                 <div className="navbar_container">
                     {/* { LOGO } */}
                     <Link href="/" className="text-lg font-medium">
-                        ponvizhi.dev
+                        PonvizhiWeb
                     </Link>
 
                     {/* Navigation */}

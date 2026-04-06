@@ -336,6 +336,10 @@ img {
     align-items: center;
     padding: 1.5rem;
     display: flex;
+    transition: all 500ms ease;
+}
+.card:hover{
+box-shadow: 4px 4px 5.8px #0000000d;
 }
 .card_image {
     object-fit: contain;
@@ -355,6 +359,10 @@ img {
     object-fit: cover;
     width: 100%;
     height: 100%;
+    transition: all 1s linear;
+}
+.portfolio_card:hover .portfolio_card-image{
+    transform: scale(1.1);
 }
 .portfolio_card-content {
     z-index: 2;
