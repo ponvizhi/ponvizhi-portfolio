@@ -25,6 +25,9 @@ const libreCaslon = Libre_Caslon_Text({
 });
 
 export const metadata = {
+  verification: {
+    google: "cA3Smc6PWyzeMtaEhGdfDTa9xAro9kE7N9xOBWcv9CU",
+  },
   title: "Freelance Web Developer in Bangalore & Chennai | React, Shopify & WordPress Expert",
   description:
     "Freelance web developer helping businesses in Bangalore, Chennai, and across India build fast, SEO-friendly websites using React, Angular, Shopify, and WordPress.",
