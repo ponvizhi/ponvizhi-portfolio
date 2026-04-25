@@ -27,7 +27,6 @@
   --color--white: #fff;
   --color--transparent: #fff0;
   --color--black-60: #0009;
-  --color--off-white: #f5f4f4;
 
   --other--container-max-width: 85rem;
   --_typography---font-weight--medium: 500;
@@ -120,6 +119,10 @@ h6{
 /* Text elements */
 p, span, a {
   font-family: var(--font-body);
+    line-height: 1.5em;
+}
+p{
+    margin: 0 0 1.5rem;
 }
 
 /* Accent / UI */
@@ -201,6 +204,8 @@ section {
     z-index: -1;
     background-color: #e56b6f;
     background: linear-gradient(93deg, #86736500, #b0a5a3);
+    background: linear-gradient(93deg, #86736500, #8b594d);
+    background: linear-gradient(93deg, #86736500, #de6468);
     filter: blur(200px);
     border-radius: 50%;
     width: 100rem;
@@ -219,13 +224,10 @@ h1, h2, h3, h4, h5, h6 {
 p, blockquote, label, li {
     font-size: var(--_text-styles---font-size-regular);
     font-weight: var(--font-weight-regular);
-    line-height: var(--_text-styles---line-height);
     letter-spacing: var(--_text-styles---letter-spacing);
     text-transform: inherit;
     color: var(--color--black-60);
     text-wrap: inherit;
-    margin-top: 0;
-    margin-bottom: 0;
 }
 .mission-subtext{
     border-radius: .5rem;
@@ -571,7 +573,7 @@ box-shadow: 4px 4px 5.8px #0000000d;
 }
 .footer_layout {
     grid-column-gap: 2.5rem;
-    grid-row-gap: 2.5rem;
+    grid-row-gap:1rem;
     flex-flow: column;
     padding-left: 4.5rem;
     padding-right: 4.5rem;
@@ -599,7 +601,7 @@ box-shadow: 4px 4px 5.8px #0000000d;
     color: var(--color-beige);
     font-family: var(--font-libre);
 }
-.button{
+.ft_button{
         border-radius: var(--radius--full);
     background-color: #ebe9df;
     color: #151410;
@@ -627,8 +629,8 @@ box-shadow: 4px 4px 5.8px #0000000d;
     transform: translate(-.5rem);
 }svg:not(:root) {
     overflow: hidden;
-}.button:hover .button_arrow {
-    transform: translateX(0.75rem);
+}.ft_button:hover .button_arrow {
+    transform: translateX(1.55rem);
     opacity: 1;
 }.button_link {
     z-index: 1;
@@ -636,7 +638,8 @@ box-shadow: 4px 4px 5.8px #0000000d;
     height: 100%;
     position: absolute;
     inset: 0%;
-}.w-inline-block {
+}
+.w-inline-block { 
     max-width: 100%;
     display: inline-block;
 }.footer_links-wrap {
@@ -1056,7 +1059,7 @@ box-shadow: 4px 4px 5.8px #0000000d;
     margin: auto;
 }
 
-.testim .arrow {
+.testim .arrow, .processSlider .arrow {
     border-radius: 100vw;
     background-color: #ebe9df;
     pointer-events: auto;
@@ -1071,27 +1074,31 @@ box-shadow: 4px 4px 5.8px #0000000d;
     transition: color .35s, background-color .35s;
     display: flex;
 }
-.testim .arrow:hover{
+.processSlider .arrow{
+    background:#151410;
+}
+.testim .arrow:hover,  .processSlider .arrow:hover{
     background-color: var(--color--orange);
     color: var(--color--white);
 }
-.testim .arrow svg{
+.testim .arrow svg,  .processSlider .arrow svg{
     width: .75rem;
 }
-.testim .arrow:hover svg path{
+.testim .arrow:hover svg path,  .processSlider .arrow svg path{
     stroke: var(--color--white);
 }
-.testim .arrow:before {
+.testim .arrow:before,  .processSlider .arrow:before {
 		cursor: pointer;
 }  
 
-.testim .arrow.left {
+.testim .arrow.left,  .processSlider .arrow.left {
     left: 70px;
 }
 
-.testim .arrow.right {
+.testim .arrow.right,  .processSlider .arrow.right {
     right: 70px;
     transform: rotate(180deg);
+    box-shadow: 1px 1px 20px -2px rgba(8, 38, 32, .15);
 }
 
 .testim .dots {
@@ -1567,6 +1574,85 @@ box-shadow: 4px 4px 5.8px #0000000d;
 .sticky-icon a:hover {
     transform: translate(73px, 0px);
 }
+.text-white {
+    color: var(--color-white) !important;
+}
+.ProcessCarousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 3rem 0;
+}
+
+.ProcessCarousel .card {
+  max-width: 500px;
+  background: #fef9f2;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ProcessCarousel .arrow {
+  background: #000;
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+}
+.processCard{
+    background: var(--color--off-white);
+    border-radius: 20px;
+    padding: 24px;
+    height: 100%;
+    text-align: center;
+}
+.processSecGrid{
+    grid-template-columns: 30% 65%;
+}
+.processSecGrid .arrow.left:disabled, .processSecGrid .arrow.right:disabled{
+        opacity: 0;
+    pointer-events: none;
+}
+.faqDiv{
+    margin-top: 20px;
+}
+.faqCard{
+    background: var(--color--off-white);
+    padding: 20px 20px;
+    border: none;
+    border-radius: 20px;
+    margin: 12px 0;
+}
+.faqCard p{
+    margin: 0;
+}
+.footer_Quicklink{
+        display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.linkStyle{
+ font-weight: 600;
+    line-height: 20px;
+    display: block;
+    cursor: pointer;
+    text-underline-offset: 3px;
+    text-decoration: underline;
+    text-decoration-skip-ink: all;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
 
 @media screen and (max-width: 767px) {
     .navbar_open-button {
@@ -1647,6 +1733,7 @@ box-shadow: 4px 4px 5.8px #0000000d;
     .skills-list li{
         padding: 6px 2px;
     }
+   
 }
 
 @media (max-width: 767px){
@@ -1728,5 +1815,33 @@ box-shadow: 4px 4px 5.8px #0000000d;
 }
 .footer_top{
     display: flex;
+}
+ .grid-cols-\[2fr_3fr\], .grid-cols-\[3fr_2fr\] {
+    grid-template-columns: 100%;
+}
+.gap-16{
+gap: 30px;
+}
+.processSecGrid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+p, blockquote, label, li{
+        font-size: 16px;
+} .processSlider{
+    padding: -10px;
+        padding-bottom: 50px;
+}
+   .processSlider .reviews_slider-button-wrap {
+        display: flex;
+        justify-content: center;
+        top: unset;
+        bottom: 0;
+        transform: translate(0);
+        gap: 16px;
+    }
+    .processSecGrid .arrow.left:disabled, .processSecGrid .arrow.right:disabled {
+    opacity: 1;
+    pointer-events: none;
 }
 }

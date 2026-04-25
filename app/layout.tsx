@@ -3,6 +3,7 @@ import { Geist, Fira_Code, Libre_Caslon_Text } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/footer";
+import Script from "next/script";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -24,36 +25,19 @@ const libreCaslon = Libre_Caslon_Text({
   display: "swap",
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   verification: {
     google: "cA3Smc6PWyzeMtaEhGdfDTa9xAro9kE7N9xOBWcv9CU",
   },
   metadataBase: new URL("https://www.ponvizhiweb.com"),
-  title: "Freelance Web Developer in Bangalore & Chennai | React, Shopify & WordPress Expert",
+  alternates: {
+    canonical: "/",
+  },
+  title:
+    "Freelance Web Developer in Bangalore & Chennai | React, Shopify & WordPress Expert",
   description:
     "Freelance web developer helping businesses in Bangalore, Chennai, and across India build fast, SEO-friendly websites using React, Angular, Shopify, and WordPress.",
 };
-
-<script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      name: "Ponvizhi John",
-      jobTitle: "Freelance Web Developer",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Chennai",
-        addressCountry: "India"
-      },
-      sameAs: [
-        "https://github.com/ponvizhi/",
-        "www.linkedin.com/in/ponvizhi-john-freelance-web-designer-and-front-end-developer-b7270313b"
-      ]
-    }),
-  }}
-/>
 
 export default function RootLayout({
   children,
@@ -67,6 +51,31 @@ export default function RootLayout({
     >
       <body>
         <Header />
+
+        {/* ✅ Proper global schema */}
+        <Script
+          id="person-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Ponvizhi John",
+              jobTitle: "Freelance Web Developer",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Chennai",
+                addressCountry: "India",
+              },
+              sameAs: [
+                "https://github.com/ponvizhi/",
+                "https://www.linkedin.com/in/ponvizhi-john-freelance-web-designer-and-front-end-developer-b7270313b",
+              ],
+            }),
+          }}
+        />
+
         <main className="main-wrapper">{children}</main>
         <Footer />
       </body>
