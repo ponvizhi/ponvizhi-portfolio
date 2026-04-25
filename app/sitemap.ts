@@ -6,5 +6,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://www.ponvizhiweb.com/",
       lastModified: new Date(),
     },
+    {
+      url: "https://www.ponvizhiweb.com/freelance-web-developer-in-bangalore",
+      lastModified: new Date(),
+    },
   ];
 }
