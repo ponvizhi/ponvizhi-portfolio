@@ -16,9 +16,9 @@ export default function Footer(){
                               </div>
                            </div>
                         </div>
-                        <div data-navbar="" data-wf--button--variant="base" className="button">
+                        <div data-navbar="" data-wf--button--variant="base" className="ft_button">
                            <div className="button_content">
-                              <div className="button_text">Book a Free Call</div>
+                              <div className="button_text">Get a Free Website Audit</div>
                               <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24" fill="none" className="button_arrow">
                                  <path d="M20 12L4 12M20 12C20 10.682 15 7 15 7M20 12C20 13.318 15 17 15 17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
                               </svg>
@@ -36,7 +36,13 @@ export default function Footer(){
                         </div>
                      </div>
                   </div>
+                  <div className="footer_Quicklink">
+                     <ul role="list" className="global_list footer_links-list">
+                              <li className="global_list-item global_link-item"><a href="/freelance-web-developer-in-bangalore" className="heading-style-h6 color-paragraph footer_link">Freelance Web Developer in Bangalore</a></li>
+                           </ul>
+                  </div>
                   <div className="footer_bottom">
+                     
                      <div className="text-size-small is-caption">©2026 ponvizhiweb.com | All rights reserved.</div>
                   </div>
                </div>

@@ -20,11 +20,11 @@ export default function Header(){
                         <Link href="/" className="text-gray-500 transition">
                             Home
                         </Link>
-                        <Link href="#service"  className="text-gray-500 transition">Services</Link>
-                        <Link href="#work" className="text-gray-500 transition">
+                        <Link href="/#service"  className="text-gray-500 transition" scroll={true}>Services</Link>
+                        <Link href="/#work" className="text-gray-500 transition" scroll={true}>
                             Work
                         </Link>
-                        <Link href="#contact" className="">
+                        <Link href="/#contact" className="" scroll={true}>
                             <RippleButton title="Book a Free Call" variant="solid" to="#contact" />
                         </Link>
                     </nav>
@@ -41,11 +41,11 @@ export default function Header(){
                     <Link href="/" className="navbar_link-text" onClick={()=> setIsOpen(false)}>
                             Home
                         </Link>
-                        <Link href="#service" className="navbar_link-text" onClick={()=> setIsOpen(false)}>Services</Link>
-                        <Link href="#work" className="navbar_link-text" onClick={()=> setIsOpen(false)}>
+                        <Link href="/#service" className="navbar_link-text" onClick={()=> setIsOpen(false)}>Services</Link>
+                        <Link href="/#work" className="navbar_link-text" onClick={()=> setIsOpen(false)}>
                             Work
                         </Link>
-                        <Link href="#contact" className="customBtn"onClick={()=> setIsOpen(false)}>
+                        <Link href="/#contact" className="customBtn"onClick={()=> setIsOpen(false)}>
                             <RippleButton title="Book a Free Call" variant="solid" to="#contact" />
                         </Link>
                 </nav>

@@ -1,0 +1,200 @@
+:global(.header){
+    position: fixed !important;
+    width: 100%;
+}
+.serviceHero{
+    background: #2e2c25;
+}
+.cardWrap{
+    padding-top: var(--padding--section-vertical);
+    padding-bottom: var(--padding--section-vertical);
+    padding-right: var(--padding--inner-horizontal-padding);
+    padding-left: var(--padding--inner-horizontal-padding);
+    text-align: center;
+    display: grid;
+    gap: 14px;
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 11rem;
+}
+.cardWrap p{
+    font-size: 1.4em;
+    line-height: 1.5em;
+    margin: 0 0 1.5rem;
+}
+.whyToChoose {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+.whyToChoose li{
+        position: relative;
+    flex: 1 1 calc(33% - 2rem);
+    background-color: #ffeeee;
+    padding: 1.5rem 1.5rem 1.5rem 3.75rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+        font-style: normal;
+    font-weight: 400;
+    font-size: clamp(16px, 16px + 2 * (100vw - 1024px) / 416, 18px);
+}
+.whyToChoose li:before {
+        position: absolute;
+        display: block;
+        content: "";
+        width: 1.5rem;
+        height: 1.5rem;
+        background: center / contain no-repeat url(/images/icon-check.svg);
+        background-size: 1.5rem;
+        top: 50%;
+        left: 1.5rem;
+        transform: translateY(-50%);
+    }
+.introSec, .Loation{
+    background-color: #FFFFFF;
+}
+.serviceSec{
+    background: #151410;
+}
+.isInnerGap{
+    padding: 5rem 2rem;
+}
+.swiperWrapper{
+
+}
+.swiperSlide {
+    padding: 3rem;
+    border-radius: 8px;
+    border: 1px solid var(--color--orange);
+    background-color: #151410;
+    margin-bottom: 8px;
+}
+.swiperSlide h4{
+    color: var(--color--orange);
+}
+.swiperSlide p{
+    color: #FFFFFF;
+}
+.swiperSlide:nth-child(odd) {
+    transform: rotate(-1deg);
+}
+
+.swiperSlide:nth-child(even) {
+    transform: rotate(1deg);
+}
+.stickyDiv{
+    position: sticky;
+    top: 150px;
+}
+.emptySpace{
+        margin: 30px 0;
+    border: 0;
+}
+.caseStudy{
+    
+}
+.workGridWrap{
+    display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 34px;
+}
+.wordGrid{
+    box-shadow: rgba(0, 0, 0, 0.05) 4px 4px 5.8px;
+    background: var(--color--white);
+    border-radius: 24px;
+    overflow: hidden;
+}
+.wordGrid .desc{
+padding: 25px;
+}
+.wordGrid .desc h3{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: bolder;
+}
+.wordGrid .desc h4{
+    font-size: 20px;
+    line-height: 32px;
+}
+.wordGrid .desc h5{
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: bolder;
+    margin-bottom: 4px;
+}
+.wordGrid .desc ul{
+    margin-bottom: 12px;
+    list-style: disc;
+    list-style-position: inside;
+}
+.cardImg{
+    aspect-ratio: 16 / 9;overflow: hidden !important;position: relative;
+}
+.cardImg img{
+    transition: all 0.25s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    bottom: auto;
+    right: auto;
+    transform: translate(-50%, -50%) !important;
+    object-fit: cover;
+    opacity: 0.8;
+    height: 100%;
+    width: 100%;
+}
+.wordGrid:hover .cardImg img{
+        transform: translate(-50%, -50%) scale(1.1) !important;
+    opacity: 1;
+}
+.process{
+    background: var(--color--white);
+}
+.defaultUl{
+        list-style: disc;
+    list-style-position: inside;
+    padding-left: 15px;
+    margin-bottom: 15px;
+}
+.serviceHero h1{
+    font-size: 50px;
+    line-height: 62px;
+}
+
+@media(max-width: 1024px){
+.swiperSlide{
+    padding: 1.5rem;
+}
+
+.isInnerGap {
+    padding: 4rem 1rem;
+}
+
+}
+@media (max-width: 767px){
+.workGridWrap{
+grid-template-columns: repeat(1, 1fr);
+gap: 24px;
+}
+.whyToChoose{
+    flex-direction: column;
+    gap: 16px;
+}
+.cardWrap{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 9rem;
+}
+.cardWrap h1{
+    font-size: 40px;
+    line-height: 56px;
+}
+.cardWrap p {
+    margin: 0rem;
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
+}
