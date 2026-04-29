@@ -1,38 +1,18 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
+import { getAllBlogs } from "@/lib/blog";
 
-const blogDir = path.join(process.cwd(), "content/blog");
+export default function BlogPage() {
+  const blogs = getAllBlogs();
 
-export function getAllBlogs() {
-  const files = fs.readdirSync(blogDir);
+  return (
+    <div>
+      <h1>Blog</h1>
 
-  return files.map((file) => {
-    const slug = file.replace(".mdx", "");
-
-    const fileContent = fs.readFileSync(
-      path.join(blogDir, file),
-      "utf-8"
-    );
-
-    const { data } = matter(fileContent);
-
-    return {
-      slug,
-      ...data,
-    };
-  });
-}
-
-export function getBlogBySlug(slug: string) {
-  const fullPath = path.join(blogDir, `${slug}.mdx`);
-  const fileContent = fs.readFileSync(fullPath, "utf-8");
-
-  const { data, content } = matter(fileContent);
-
-  return {
-    slug,
-    ...data,
-    content,
-  };
+      {blogs.map((blog) => (
+        <div key={blog.slug}>
+          <h2>{blog.title}</h2>
+          <p>{blog.description}</p>
+        </div>
+      ))}
+    </div>
+  );
 }
