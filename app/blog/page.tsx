@@ -1,17 +1,43 @@
-import { getAllBlogs } from "@/lib/blogs";
+import { getBlogBySlug } from "@/lib/blogs";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
-export default function BlogPage() {
-  const blogs = getAllBlogs();
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
+export async function generateMetadata(
+  { params }: Props
+): Promise<Metadata> {
+  const blog = getBlogBySlug(params.slug);
+
+  if (!blog) {
+    return {
+      title: "Blog not found",
+    };
+  }
+
+  return {
+    title: blog.title,
+    description: blog.description,
+  };
+}
+
+// ✅ REQUIRED DEFAULT EXPORT
+export default function BlogPostPage({ params }: Props) {
+  const blog = getBlogBySlug(params.slug);
+
+  if (!blog) return notFound();
 
   return (
-    <div>
-      <h1>Blog</h1>
+    <article>
+      <h1>{blog.title}</h1>
+      <p>{blog.date}</p>
 
-      {blogs.map((blog) => (
-        <div key={blog.slug}>
-          <h2>{blog.title}</h2>
-        </div>
-      ))}
-    </div>
+      {/* For now plain content */}
+      <div>{blog.content}</div>
+    </article>
   );
 }

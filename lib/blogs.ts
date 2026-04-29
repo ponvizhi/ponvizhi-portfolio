@@ -4,24 +4,21 @@ import matter from "gray-matter";
 
 const blogDir = path.join(process.cwd(), "content/blog");
 
-export function getAllBlogs() {
-  const files = fs.readdirSync(blogDir);
-
-  // get first paragraph as excerpt
 function generateExcerpt(content: string) {
   return content
-    .replace(/!\[.*?\]\(.*?\)/g, "") // remove images
+    .replace(/!\[.*?\]\(.*?\)/g, "")
     .split("\n")
     .find((line) => line.trim().length > 0)
-    ?.slice(0, 160)
-    || "";
+    ?.slice(0, 160) || "";
 }
 
-// extract first image as thumbnail
 function getThumbnail(content: string) {
   const match = content.match(/!\[.*?\]\((.*?)\)/);
   return match?.[1] || "/default.jpg";
 }
+
+export function getAllBlogs() {
+  const files = fs.readdirSync(blogDir);
 
   return files.map((file) => {
     const slug = file.replace(".mdx", "");
