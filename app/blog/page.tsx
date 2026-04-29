@@ -1,4 +1,4 @@
-import { getAllBlogs } from "@/lib/blog";
+import { getAllBlogs } from "@/lib/blogs";
 
 export default function BlogPage() {
   const blogs = getAllBlogs();
@@ -10,7 +10,6 @@ export default function BlogPage() {
       {blogs.map((blog) => (
         <div key={blog.slug}>
           <h2>{blog.title}</h2>
-          <p>{blog.description}</p>
         </div>
       ))}
     </div>
