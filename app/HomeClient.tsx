@@ -352,7 +352,7 @@ export default function HomeClient({ blogs = [] }: any) {
         </div>
       </div>
     </section>
-    <section className="section_contact is-gap" id="contact">
+    <section className="section_contact is-gap" id="blog">
       <div className="padding-global">
         <div className="container-large">
           <div className="contact_wrap is-v2">

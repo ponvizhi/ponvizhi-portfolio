@@ -43,9 +43,9 @@ const FAQAccordion = ({ faqs }: FAQAccordionProps) => {
           </button>
 
           {activeIndex === index && (
-            <p id={`faq-${index}`} style={{ marginTop: "8px", color: "#555" }}>
-              {faq.answer}
-            </p>
+            <div id={`faq-${index}`} style={{ marginTop: "8px", color: "#555" }}
+  dangerouslySetInnerHTML={{ __html: faq.answer }}
+/>
           )}
         </div>
       ))}
