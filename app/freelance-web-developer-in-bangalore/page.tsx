@@ -9,8 +9,9 @@ export const metadata = {
   title: "Freelance Web Developer in Bangalore | Fast & SEO Websites",
   description:
     "Freelance web developer in Bangalore building fast, SEO-friendly and high-converting websites using React, Shopify and WordPress.",
+  metadataBase: new URL("https://www.ponvizhiweb.com"),
   alternates: {
-    canonical: "/freelance-web-developer-bangalore",
+    canonical: "/freelance-web-developer-in-bangalore",
   },
 };
 
