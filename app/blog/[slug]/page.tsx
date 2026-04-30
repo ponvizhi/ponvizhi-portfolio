@@ -107,11 +107,17 @@ export async function generateMetadata({ params }: Props) {
 
   const blog = getBlogBySlug(slug);
 
+  const url = `https://www.ponvizhiweb.com/blog/${slug}`;
+
   if (!blog) return {};
 
   return {
     title: blog.metaTitle,
     description: blog.metaDescription,
+    metadataBase: new URL("https://www.ponvizhiweb.com"),
+    alternates: {
+      canonical: url,
+    },
   };
 }
 
