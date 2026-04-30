@@ -1,0 +1,123 @@
+:global(.header){
+    position: fixed !important;
+    width: 100%;
+}
+:global(body){
+    background-color: var(--color--off-white);
+}
+:global(.faqCard){
+        background-color: var(--color-beige);
+}
+:global(h2){
+        font-size: 42px;
+}
+:global(table) {
+  border-collapse: collapse; /* Merge borders into a single line */
+  width: 100%; /* Optional: set table width */
+  margin: 20px auto; /* Center the table */
+}
+
+/* Style table cells and headers */
+:global(th), :global(td) {
+  border: 1px solid #333; /* Dark border */
+  padding: 8px;           /* Space inside cells */
+  text-align: left;       /* Align text to the left */
+}
+
+/* Optional: style header row */
+:global(th) {
+  background-color: #f2f2f2;
+}
+.blogdetailHeader{
+    background: linear-gradient(220deg, #86736500, #de6468);
+    padding: 14rem 2rem 8rem;
+}
+.blogWrapper{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 380px;
+    gap: 40px;
+    padding: 0 2rem 5rem;
+    margin-top: -5rem;
+}
+.blogRight form{
+    background-color: #151410;
+    padding: 2rem;
+    border-radius: 0 0 16px 16px;
+}
+.blogRight input, .blogRight textarea{
+    border-color: var(--color--off-white);
+    color: var(--color--off-white);
+}
+.blogRight button{
+    background: var(--color--off-white);
+    color: #151410 !important;
+}
+.blogLeft ul, .blogLeft ol{
+        list-style: disc;
+    list-style-position: inside;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+.blogLeft li{
+    line-height: 1.5em;
+    margin: 6px 0;
+}
+.blogLeft ol{
+    list-style: decimal;
+}
+.blogRight h3{
+    background: #151410;
+    margin: 0;
+    padding: 2rem 2rem 0 2rem;
+    border-radius: 16px 16px 0 0;
+}
+.blogLeft img{
+   border-radius: 16px 16px 0 0; 
+}
+.blogdetailHeader .container-large{
+    padding: 0 2rem;
+}
+.blogformWrapper{
+    position: sticky;
+    top: 140px;
+}
+.blogInnerSec{
+    padding: 0 2rem;
+}
+.blogDate{
+        font-size: 18px;
+    font-weight: 400;
+    display: block;
+    margin: 16px 0 0 0;
+}
+
+.blogLeft a{
+    color: var(--color--orange);
+}
+
+@media(max-width: 890px){
+    .blogWrapper{
+        grid-template-columns: auto;
+        margin-bottom: 40px;
+        gap: 20px;
+            padding: 0 2rem 2rem;
+    }
+    .blogdetailHeader{
+        padding: 10rem 2rem 7rem;
+    }
+}
+
+@media(max-width: 767px){
+    .blogdetailHeader {
+        padding: 10rem 1.2rem 7rem;
+    }
+    .blogWrapper{
+        padding: 0 1.2rem 2rem;
+    }
+    :global(h2) {
+    font-size: 30px;
+    }
+    .blogdetailHeader h1{
+        font-size: 48px;
+    }
+}
