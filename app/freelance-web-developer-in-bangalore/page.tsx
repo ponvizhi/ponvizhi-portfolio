@@ -73,7 +73,7 @@ export default function FreelanceWebDeveloperInBangalore() {
 
           <p className="text-white">Based in India and working with clients across Bangalore including Whitefield, Indiranagar, Electronic City, and Koramangala.</p>
           <div style={{margin: 'auto'}}>
-          <RippleButton title="Book a Free Call" variant="solid" to="#contact"/>
+          <RippleButton title="Book a Free Call" variant="solid" to="/#contact"/>
           </div>
           </div>
         </div>
@@ -107,7 +107,7 @@ With expertise in modern technologies like React, Angular, and Shopify, I ensure
             <div className={styles.stickyDiv}>
         <h2 className="text-white">Services I Offer</h2>
         <p className="text-white">Our only call where you won't learn anything. You get setup with us and we learn about you. We take over admin stresses from you.</p>
-        <RippleButton title="Book a Free Call" variant="solid" to="#contact"/>
+        <RippleButton title="Book a Free Call" variant="solid" to="/#contact"/>
         </div>
         </div>
 <div className={styles.swiperWrapper}>
@@ -146,7 +146,7 @@ With expertise in modern technologies like React, Angular, and Shopify, I ensure
         <div className={styles.leftTitle}>
         <h2>Our process</h2>
         <p>From concept to launch, we craft user-friendly, visually striking websites tailored to your brand.</p>
-        <RippleButton title="Book a Free Call" variant="solid" to="#contact"/>
+        <RippleButton title="Book a Free Call" variant="solid" to="/#contact"/>
         </div>
         <ProcessCarousel />
         </div>

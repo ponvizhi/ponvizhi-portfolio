@@ -2,6 +2,9 @@
     position: fixed !important;
     width: 100%;
 }
+:global(.reviews_slider-button-wrap){
+    top: 50%
+}
 .serviceHero{
     background: #2e2c25;
 }
