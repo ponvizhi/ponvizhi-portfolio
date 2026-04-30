@@ -5,10 +5,15 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import styles from "../../styles/blog_style.module.css";
 import rehypeRaw from "rehype-raw";
-import FAQSection from "@/components/FAQSection";
+import FAQAccordion from "@/components/FAQAccordion";
 
-const faqData = {
-  "freelance-web-developer-bangalore": [
+type FAQ = {
+  question: string;
+  answer: string;
+};
+
+const faqData: Record<string, FAQ[]> = {
+  "freelance-web-developer-bangalore-guide": [
     {
       question: "How much does it cost to hire a web developer in Bangalore?",
       answer:
@@ -35,9 +40,15 @@ export async function generateStaticParams() {
   }));
 }
 
+type Props = {
+  params: Promise<{
+    slug: string;
+  }>;
+};
+
 // ✅ FIX: async params handling
-export async function generateMetadata({ params }) {
-  const { slug } = await params; // 🔥 IMPORTANT FIX
+export async function generateMetadata({ params }: Props) {
+  const { slug } = await params; // ✅ NO await
 
   const blog = getBlogBySlug(slug);
 
@@ -49,7 +60,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function BlogPost({ params }) {
+export default async function BlogPost({ params }: Props) {
   const { slug } = await params;
 
   if (!slug) return notFound();
@@ -83,7 +94,7 @@ export default async function BlogPost({ params }) {
 
             {/* ✅ THIS NOW WORKS */}
             <h2>FAQs</h2>
-            <FAQSection faqs={faqs} />
+            <FAQAccordion faqs={faqs} />
           </div>
 
           <div className={styles.blogRight}>

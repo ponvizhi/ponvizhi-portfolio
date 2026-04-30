@@ -60,36 +60,41 @@ export default function HomeClient({ blogs = [] }: any) {
                       <div className="card">
                         <img src="images/service1image.png" loading="lazy" className="card_image" alt="Web Design Service"></img>
                         <div className="card_content-wrap">
-                          <h3>Web Design</h3>
-                          <p>We craft user-focused designs that blend form and function, ensuring every pixel guides your customers effortlessly through your product.</p>
+                          <h3>Web Design & Development</h3>
+                          <p>We design and build modern, user-friendly websites that not only look great but also drive results for your business.</p>
                           <ul>
-                            <li>Responsive layouts for all devices.</li>
-                            <li>Intuitive navigation and clear hierarchy.</li>
-                            <li>Brand-aligned visual systems.</li>
+                            <li>Custom Web Design</li>
+                            <li>Website Redesign</li>
+                            <li>Corporate Website Design</li>
+                            <li>CMS Development (WordPress, Shopify, etc.)</li>
+                            <li>Performance-Optimized Builds</li>
                           </ul>
                         </div>
                       </div>
                       <div className="card">
                         <img src="images/service2image.png" loading="lazy" className="card_image" alt="Performance Optimize Service"></img>
                         <div className="card_content-wrap">
-                          <h3>Performance Optimize</h3>
-                          <p>We enhance your website's speed and efficiency to deliver a smooth user experience, faster loading times, and better search engine performance.</p>
+                          <h3>SEO & Website Optimization</h3>
+                          <p>We optimize your website to rank higher on search engines, improve user experience, and convert visitors into customers.</p>
                           <ul>
-                            <li>Page speed and load time improvements.</li>
-                            <li>Code, image, and asset optimization.</li>
-                            <li>Caching and performance monitoring.</li>
+                            <li>On-Page SEO Optimization</li>
+                            <li>SEO Consultation</li>
+                            <li>User Experience (UX) Improvements</li>
+                            <li>Mobile-First Optimization</li>
+                            <li>Conversion Rate Optimization (CRO)</li>
                           </ul>
                         </div>
                       </div>
                       <div className="card">
                         <img src="images/service3image.png" loading="lazy" className="card_image" alt="Maintenance Service"></img>
                         <div className="card_content-wrap">
-                          <h3>Maintenance</h3>
-                          <p>We keep your software running smoothly with proactive monitoring, security updates, and feature enhancements—so you never miss a beat.</p>
+                          <h3>Website Maintenance & Support</h3>
+                          <p>We keep your website secure, updated, and running smoothly with ongoing support and regular maintenance.</p>
                           <ul>
-                            <li>24/7 performance monitoring.</li>
-                            <li>Regular security patches.</li>
-                            <li>Priority support & updates.</li>
+                            <li>Regular Updates</li>
+                            <li>Security Monitoring</li>
+                            <li>Bug Fixes</li>
+                            <li>Backup Management</li>
                           </ul>
                         </div>
                       </div>

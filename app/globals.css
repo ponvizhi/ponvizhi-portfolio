@@ -53,9 +53,7 @@
 --_typography---font-size--h4: clamp(1.75 * 1rem, ((1.75 - ((1.75 - 1.75) / (var(--other--viewport-max-width) - var(--other--viewport-min-width)) * var(--other--viewport-min-width))) * 1rem + ((1.75 - 1.75) / (var(--other--viewport-max-width) - var(--other--viewport-min-width))) * 100vw), 1.75 * 1rem);
 --_typography---font-size--h5: clamp(1.25 * 1rem, ((1.25 - ((1.5 - 1.25) / (var(--other--viewport-max-width) - var(--other--viewport-min-width)) * var(--other--viewport-min-width))) * 1rem + ((1.5 - 1.25) / (var(--other--viewport-max-width) - var(--other--viewport-min-width))) * 100vw), 1.5 * 1rem);
 --_typography---font-size--h6: clamp(1.125 * 1rem, ((1.125 - ((1.25 - 1.125) / (var(--other--viewport-max-width) - var(--other--viewport-min-width)) * var(--other--viewport-min-width))) * 1rem + ((1.25 - 1.125) / (var(--other--viewport-max-width) - var(--other--viewport-min-width))) * 100vw), 1.25 * 1rem);
-
---_typography---font-size--text-tiny: clamp(.75 * 1rem, ((.75 - ((.75 - .75) / (var(--other--viewport-max-width) - var(--other--viewport-min-width)) * var(--other--viewport-min-width))) * 1rem + ((.75 - .75) / (var(--other--viewport-max-width) - var(--other--viewport-min-width))) * 100vw), .75 * 1rem);
-/* --_typography---font-size--text-regular: clamp(.875 * 1rem, ((.875 - ((1 - .875) / (var(--other--viewport-max-width) - var(--other--viewport-min-width)) * var(--other--viewport-min-width))) * 1rem + ((1 - .875) / (var(--other--viewport-max-width) - var(--other--viewport-min-width))) * 100vw), 1 * 1rem); */
+--_typography---font-size--text-regular: clamp(.875 * 1rem, ((.875 - ((1 - .875) / (var(--other--viewport-max-width) - var(--other--viewport-min-width)) * var(--other--viewport-min-width))) * 1rem + ((1 - .875) / (var(--other--viewport-max-width) - var(--other--viewport-min-width))) * 100vw), 1 * 1rem);
 --_typography---font-size--text-regular: clamp(
   0.9375 * 1rem,
   (

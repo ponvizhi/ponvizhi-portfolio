@@ -2,18 +2,30 @@
 import { useState } from "react";
 import Script from "next/script";
 
-export default function FAQSection({ faqs }) {
+type FAQ = {
+  question: string;
+  answer: string;
+};
+
+type FAQAccordionProps = {
+  faqs: FAQ[];
+};
+
+const FAQAccordion = ({ faqs }: FAQAccordionProps) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  if (!faqs.length) return null;
 
   return (
     <div className="faqDiv">
       {faqs.map((faq, index) => (
-        <div key={index} className="faqCard">
+        <div key={faq.question} className="faqCard">
           <button
             onClick={() =>
               setActiveIndex(activeIndex === index ? null : index)
             }
             aria-expanded={activeIndex === index}
+            aria-controls={`faq-${index}`}
             style={{
               width: "100%",
               background: "none",
@@ -31,7 +43,7 @@ export default function FAQSection({ faqs }) {
           </button>
 
           {activeIndex === index && (
-            <p style={{ marginTop: "8px", color: "#555" }}>
+            <p id={`faq-${index}`} style={{ marginTop: "8px", color: "#555" }}>
               {faq.answer}
             </p>
           )}
@@ -41,7 +53,7 @@ export default function FAQSection({ faqs }) {
       <Script
         id="faq-schema"
         type="application/ld+json"
-        strategy="afterInteractive"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -59,4 +71,6 @@ export default function FAQSection({ faqs }) {
       />
     </div>
   );
-}
+};
+
+export default FAQAccordion;
