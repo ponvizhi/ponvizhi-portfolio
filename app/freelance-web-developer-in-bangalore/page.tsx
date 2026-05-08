@@ -4,67 +4,98 @@ import ProcessCarousel from "@/components/processSlider";
 import ContactForm from "@/components/ContactForm";
 import FAQSection from "@/components/FAQSection";
 import Script from "next/script";
+import ServicesSection from "@/components/serviceiOffer";
 
 export const metadata = {
   title: "Freelance Web Developer in Bangalore | Fast & SEO Websites",
+
   description:
     "Freelance web developer in Bangalore building fast, SEO-friendly and high-converting websites using React, Shopify and WordPress.",
+
   metadataBase: new URL("https://www.ponvizhiweb.com"),
+
   alternates: {
     canonical: "/freelance-web-developer-in-bangalore",
   },
 };
 
+const faqs1 = [
+  {
+      question: "How much does website development cost in Bangalore?",
+      answer:
+        "Website development costs typically range from ₹15,000 to ₹1,50,000+ depending on complexity and features.",
+    },
+    {
+      question: "How long does it take to build a website?",
+      answer:
+        "Most websites take 1-3 weeks, while custom applications may take 4-8 weeks.",
+    },
+    {
+      question: "Which platform is best for my business website?",
+      answer:
+        "WordPress is great for content, Shopify for e-commerce, and React/Angular for scalable apps.",
+    },
+    {
+      question: "Will my website be SEO-friendly?",
+      answer:
+        "Yes, all websites are built with SEO best practices including speed and mobile optimization.",
+    },
+    {
+      question: "Do you provide ongoing support?",
+      answer:
+        "Yes, I provide maintenance, updates, and performance optimization.",
+    },
+];
+
 export default function FreelanceWebDeveloperInBangalore() {
   return (
     <>
-      {/* ✅ Proper Schema */}
       <Script
-        id="bangalore-service-schema"
-        type="application/ld+json"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ProfessionalService",
-            name: "Freelance Web Developer in Bangalore",
-            url: "https://www.ponvizhiweb.com/freelance-web-developer-bangalore",
-            image: "https://www.ponvizhiweb.com/og-image.jpg",
-            description:
-              "Freelance web developer in Bangalore offering SEO-friendly, fast and high-performance websites.",
-            areaServed: {
-              "@type": "Place",
-              name: "Bangalore",
-            },
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Bangalore",
-              addressRegion: "Karnataka",
-              addressCountry: "IN",
-            },
-            serviceType: [
-              "Web Development",
-              "Shopify Development",
-              "WordPress Development",
-              "UI/UX Design",
-            ],
-          }),
-        }}
-      />
-     <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ProfessionalService",
-            name: "Freelance Web Developer in Bangalore",
-            url: "https://www.ponvizhiweb.com/freelance-web-developer-bangalore",
-            areaServed: "Bangalore",
-            description:
-              "Freelance web developer in Bangalore offering SEO-friendly and high-performance websites.",
-          }),
-        }}
-      />
+  id="bangalore-service-schema"
+  type="application/ld+json"
+  strategy="afterInteractive"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+
+      "@type": "ProfessionalService",
+
+      name: "Freelance Web Developer in Bangalore",
+
+      url: "https://www.ponvizhiweb.com/freelance-web-developer-in-bangalore",
+
+      image: "https://www.ponvizhiweb.com/og-image.jpg",
+
+      description:
+        "Freelance web developer in Bangalore offering SEO-friendly, fast and high-performance websites.",
+
+      areaServed: {
+        "@type": "City",
+        name: "Bangalore",
+      },
+
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Bangalore",
+        addressRegion: "Karnataka",
+        addressCountry: "IN",
+      },
+
+      serviceType: [
+        "Web Development",
+        "Shopify Development",
+        "WordPress Development",
+        "UI/UX Design",
+      ],
+
+      provider: {
+        "@type": "Person",
+        name: "Ponvizhi",
+        url: "https://www.ponvizhiweb.com",
+      },
+    }),
+  }}
+/>
     <section className={`${styles.serviceHero}`}>
       <div className="padding-global">
         <div className="container-large">
@@ -101,45 +132,7 @@ With expertise in modern technologies like React, Angular, and Shopify, I ensure
         </div>
       </div>
     </section>
-     <section className={`${styles.serviceSec} ${styles.isInnerGap}`}>
-      <div className="container-large">
-        <div className="grid grid-cols-[2fr_3fr] gap-16">
-          <div className={styles.leftTitle}>
-            <div className={styles.stickyDiv}>
-        <h2 className="text-white">Services I Offer</h2>
-        <p className="text-white">Our only call where you won't learn anything. You get setup with us and we learn about you. We take over admin stresses from you.</p>
-        <RippleButton title="Book a Free Call" variant="solid" to="/#contact"/>
-        </div>
-        </div>
-<div className={styles.swiperWrapper}>
-<div className={styles.swiperSlide}>
-  <h4>Custom Website Development</h4>
-  <p>I provide custom website development services in Bangalore, building fast, responsive, and SEO-friendly websites tailored to your business needs. From startups to growing businesses, I create websites designed to convert visitors into customers.</p>
-</div>
-<div className={styles.swiperSlide}>
-  <h4>Angular Web Applications</h4>
-  <p>As a freelance Angular developer in Bangalore, I build scalable and high-performance web applications with clean architecture, fast loading speed, and smooth user experience for modern businesses.</p>
-</div>
-<div className={styles.swiperSlide}>
-  <h4>Shopify & E-commerce Development</h4>
-  <p>I design and develop Shopify and e-commerce websites that are optimized for conversions, speed, and SEO. Perfect for businesses in Bangalore looking to sell products online and grow revenue.</p>
-</div>
-<div className={styles.swiperSlide}>
-  <h4>WordPress Website Design</h4>
-  <p>Get a professional WordPress website designed for your business in Bangalore. I create SEO-friendly, mobile-responsive websites that are easy to manage and optimized for performance.</p>
-</div>
-<div className={styles.swiperSlide}>
-  <h4>Landing Page Design for Lead Generation</h4>
-  <p>I create high-converting landing pages for businesses in Bangalore, focused on generating leads, improving user engagement, and increasing conversions through clean UI/UX design.</p>
-</div>
-<div className={styles.swiperSlide}>
-  <h4>Website Redesign & Performance Optimization</h4>
-  <p>Improve your existing website with redesign and performance optimization services. I help businesses in Bangalore enhance speed, SEO, and user experience to achieve better results online.</p>
-</div>
-</div>
-</div>
-      </div>
-      </section>
+<ServicesSection />
 
       <section  className={`${styles.process} ${styles.isInnerGap}`}>
         <div className="container-large">
@@ -295,7 +288,7 @@ With expertise in modern technologies like React, Angular, and Shopify, I ensure
        <section className={`${styles.faq} ${styles.isInnerGap}`}>
         <div className="container-large">
       <h2>Website Development FAQs in Bangalore</h2>
-      <FAQSection></FAQSection>
+      <FAQSection faqs={faqs1} />
 </div>
 </section>
       <section className="section_contact is-gap" id="contact">
