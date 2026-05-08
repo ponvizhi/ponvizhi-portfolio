@@ -2,36 +2,13 @@
 import { useState } from "react";
 import Script from "next/script";
 
-export default function FAQSection() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+type FAQ = {
+  question: string;
+  answer: React.ReactNode;
+};
 
-  const faqs = [
-    {
-      question: "How much does website development cost in Bangalore?",
-      answer:
-        "Website development costs typically range from ₹15,000 to ₹1,50,000+ depending on complexity and features.",
-    },
-    {
-      question: "How long does it take to build a website?",
-      answer:
-        "Most websites take 1-3 weeks, while custom applications may take 4-8 weeks.",
-    },
-    {
-      question: "Which platform is best for my business website?",
-      answer:
-        "WordPress is great for content, Shopify for e-commerce, and React/Angular for scalable apps.",
-    },
-    {
-      question: "Will my website be SEO-friendly?",
-      answer:
-        "Yes, all websites are built with SEO best practices including speed and mobile optimization.",
-    },
-    {
-      question: "Do you provide ongoing support?",
-      answer:
-        "Yes, I provide maintenance, updates, and performance optimization.",
-    },
-  ];
+export default function FAQSection({ faqs }: { faqs: FAQ[] }) {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
     <div className="faqDiv">
@@ -42,17 +19,31 @@ export default function FAQSection() {
               setActiveIndex(activeIndex === index ? null : index)
             }
             aria-expanded={activeIndex === index}
-            style={{ width: "100%", background: "none", border: "none", fontSize: "18px", fontWeight: "600", textAlign: "left", cursor: "pointer", display: "flex", justifyContent: "space-between", }}
+            style={{
+              width: "100%",
+              background: "none",
+              border: "none",
+              fontSize: "18px",
+              fontWeight: "600",
+              textAlign: "left",
+              cursor: "pointer",
+              display: "flex",
+              justifyContent: "space-between",
+            }}
           >
             {faq.question}
             <span>{activeIndex === index ? "-" : "+"}</span>
           </button>
 
-          {activeIndex === index && <p style={{ marginTop: "8px", color: "#555" }}>{faq.answer}</p>}
+          {activeIndex === index && (
+            <p style={{ marginTop: "8px", color: "#555" }}>
+              {faq.answer}
+            </p>
+          )}
         </div>
       ))}
 
-      {/* ✅ Proper FAQ Schema */}
+      {/* Schema stays dynamic */}
       <Script
         id="faq-schema"
         type="application/ld+json"
@@ -66,7 +57,10 @@ export default function FAQSection() {
               name: faq.question,
               acceptedAnswer: {
                 "@type": "Answer",
-                text: faq.answer,
+                text:
+  typeof faq.answer === "string"
+    ? faq.answer
+    : "For full answer, see page content",
               },
             })),
           }),

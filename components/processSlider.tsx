@@ -3,24 +3,24 @@ import { useState, useEffect } from "react";
 
 const steps = [
   {
-    title: "Understanding business requirements",
-    desc: "I analyze your goals, audience, and business needs to define the right approach."
+    title: "Understanding Requirements",
+    desc: "The project begins with understanding your business, target audience, goals, and functional requirements. This helps define the right website structure, features, and development approach."
   },
   {
-    title: "Planning UI/UX and structure",
-    desc: "Creating wireframes and structure focused on user experience and conversions."
+    title: "UI/UX Planning & Wireframing",
+    desc: "Website structure, layout, and user flow are planned to create a smooth and intuitive user experience. Wireframes and content structure help establish clear navigation and conversion-focused design."
   },
   {
-    title: "Design and development",
-    desc: "Building a modern, responsive website using latest technologies."
+    title: "Design & Development",
+    desc: "The website is designed and developed using modern technologies with a strong focus on responsiveness, performance, scalability, and clean user interface design."
   },
   {
-    title: "Testing and optimization",
-    desc: "Ensuring speed, responsiveness, SEO, and bug-free performance."
+    title: "Testing & Optimization",
+    desc: "Before launch, the website is tested across devices and browsers to ensure responsiveness, speed, SEO readiness, accessibility, and overall functionality."
   },
   {
-    title: "Launch and support",
-    desc: "Deploying your website and providing ongoing support if needed."
+    title: "Launch & Ongoing Support",
+    desc: "Once everything is finalized, the website is deployed to production and monitored after launch. Ongoing support, maintenance, updates, and improvements can be provided when needed."
   }
 ];
 
