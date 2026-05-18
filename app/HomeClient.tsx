@@ -7,6 +7,7 @@ import ContactForm from "@/components/ContactForm";
 import HeroSection from "@/components/HeroSection";
 import RippleButton from "@/components/RippleButton";
 import TestimonialSlider from "@/components/testimonial";
+import Link from "next/link";
 
 export default function HomeClient({ blogs = [] }: any) {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -30,7 +31,7 @@ export default function HomeClient({ blogs = [] }: any) {
               <h2>Building high-performing, SEO-friendly websites that turn visitors into customers</h2>
               <div className="hero_services-wrap"><div className="text-size-small is-caption">Web Development</div><div className="hero_services-divider"></div><div className="text-size-small is-caption">UI/UX Design</div><div className="hero_services-divider"></div><div className="text-size-small is-caption">Digital Marketing</div></div>
               <p>Frontend Developer with 7+ years of experience helping startups and businesses launch fast, scalable, and conversion-focused websites.</p>
-              <a href="/freelance-web-developer-in-bangalore" className="linkStyle">👉 Freelance Web Development Services in Bangalore</a>
+              <Link href="/freelance-web-developer-in-bangalore" className="linkStyle">👉 Freelance Web Development Services in Bangalore</Link>
               <div className="btnWrapper">
               <RippleButton title="Book a Free Call" variant="solid" to="#contact"/>
               <RippleButton title="View My Work" variant="outline" to="#work"/>

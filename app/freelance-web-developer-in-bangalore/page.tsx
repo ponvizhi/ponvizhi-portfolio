@@ -5,6 +5,7 @@ import ContactForm from "@/components/ContactForm";
 import FAQSection from "@/components/FAQSection";
 import Script from "next/script";
 import ServicesSection from "@/components/serviceiOffer";
+import Link from "next/link";
 
 export const metadata = {
   title: "Freelance Web Developer in Bangalore | Fast & SEO Websites",
@@ -308,7 +309,7 @@ If you're looking for a reliable freelance web developer in Bangalore, I’m her
 Let's discuss your project and turn your ideas into a high-performing website.
 </p>
 
-<a href="https://wa.me/919840385621" target="_blank">📞 Get Free Consultation</a>
+<Link href="https://wa.me/919840385621" target="_blank">📞 Get Free Consultation</Link>
                       </div>
                       <div className="cnt-right">
                         <ContactForm />
