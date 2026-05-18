@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
-      url: "https://www.ponvizhiweb.com/blog/",
+      url: "https://www.ponvizhiweb.com/blog",
       lastModified: new Date(),
     },
     {
@@ -19,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
-      url: "https://www.ponvizhiweb.com/services/",
+      url: "https://www.ponvizhiweb.com/services",
       lastModified: new Date(),
     },
     {

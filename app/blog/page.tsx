@@ -1,5 +1,15 @@
 import { getAllBlogs } from "@/lib/blogs";
 import styles from "../styles/service_style.module.css";
+import Link from "next/link";
+
+export const metadata = {
+  title: "Blog | PonvizhiWeb",
+  description:
+    "Read blogs about web design, development, SEO, UI/UX and business websites.",
+  alternates: {
+    canonical: "https://www.ponvizhiweb.com/blog",
+  },
+};
 
 export default function BlogPage() {
   // Get blogs and ensure newest first
@@ -7,7 +17,7 @@ export default function BlogPage() {
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
-  // اخیر blog (latest)
+  // blog (latest)
   const recentBlog = blogs[0];
 
   // remaining blogs
@@ -18,6 +28,8 @@ export default function BlogPage() {
       {/* Recent Blog Section */}
       <section className={ `${styles.recentBlog} ${styles.isInnerGap}`}>
         <div className="container-large">
+          <h1 className={styles.srOnly}>Web Design & Development Blog</h1>
+
             <h2>Recent Blog</h2>
 
             {recentBlog && (
@@ -30,7 +42,7 @@ export default function BlogPage() {
                   <p className="text-gray-500 text-sm mt-2">
                     {recentBlog.excerpt}
                   </p>
-                  <a
+                  <Link
                     href={`/blog/${recentBlog.slug}`}
                     className="blog_link w-inline-block"
                   >
@@ -49,7 +61,7 @@ export default function BlogPage() {
                         strokeLinejoin="round"
                       ></path>
                     </svg>
-                  </a>
+                  </Link>
                 </div>
               </article>
             )}
